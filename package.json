@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "db": "node fromSpreadsheets.js",
+    "start": "eleventy --serve",
+    "prestart": "npm run db",
+    "build": "eleventy",
+    "prebuild": "npm run db"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "google-spreadsheet": "^2.0.7"
+  }
+}

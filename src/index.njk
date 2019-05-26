@@ -1,0 +1,37 @@
+{% extends "base.njk" %}
+
+{% block main %}
+<h1>{{ site.name }}</h1>
+
+<section>
+  <h2>ニュース</h2>
+
+  <ul>
+    {% for news in news | jsSlice(0, 2) %}
+      <li><time>{{ news.date }}</time> {{ news.text }}</li>
+    {% endfor %}
+  </ul>
+
+  <details>
+    <summary>さらに表示</summary>
+
+    <ul>
+      {% for news in news | jsSlice(2) %}
+        <li><time>{{ news.date }}</time> {{ news.text }}</li>
+      {% endfor %}
+    </ul>
+  </details>
+</section>
+
+<section>
+  <h2>事例</h2>
+
+  <ul>
+    {% for work in collections.works %}
+      <li><a href="{{ work.url | url }}">{{ work.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <p><a href="{{ '/works/' | url }}">さらに表示</a></p>
+</section>
+{% endblock %}
