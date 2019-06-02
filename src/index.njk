@@ -1,3 +1,6 @@
+---
+title: ホーム
+---
 {% extends "base.njk" %}
 
 {% block main %}
@@ -27,8 +30,8 @@
   <h2>事例</h2>
 
   <ul>
-    {% for work in collections.works %}
-      <li><a href="{{ work.url | url }}">{{ work.data.title }}</a></li>
+    {% for work in works %}
+      <li><a href="{{ '/works/' + work.slug + '/' | url }}">{{ work.title }}</a></li>
     {% endfor %}
   </ul>
 

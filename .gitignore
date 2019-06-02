@@ -63,4 +63,4 @@ typings/
 # project build output
 /dist/
 /src/_data/news.json
-/src/works/*.md
+/src/_data/works.json

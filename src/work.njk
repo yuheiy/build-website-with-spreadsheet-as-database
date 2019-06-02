@@ -1,0 +1,14 @@
+---
+pagination:
+  data: works
+  size: 1
+  alias: work
+permalink: works/{{ work.slug }}/index.html
+---
+{% extends "base.njk" %}
+
+{% block main %}
+<h1>{{ work.title }}</h1>
+
+<p>{{ work.text }}</p>
+{% endblock %}
